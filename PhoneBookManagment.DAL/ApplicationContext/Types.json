@@ -1,0 +1,30 @@
+[
+  {
+    "Name": "work1",
+    "UserTypes": null,
+    "Id": 1,
+    "IsDeleted": false,
+    "CreatedOn": "2022-09-29T21:56:46.5566208+02:00"
+  },
+  {
+    "Name": "Phone",
+    "UserTypes": null,
+    "Id": 2,
+    "IsDeleted": false,
+    "CreatedOn": "2022-09-29T19:53:24.9214632+02:00"
+  },
+  {
+    "Name": "Home",
+    "UserTypes": null,
+    "Id": 3,
+    "IsDeleted": false,
+    "CreatedOn": "2022-09-29T19:53:38.6142395+02:00"
+  },
+  {
+    "Name": "testi",
+    "UserTypes": null,
+    "Id": 4,
+    "IsDeleted": true,
+    "CreatedOn": "2022-09-30T12:09:37.4579618+02:00"
+  }
+]

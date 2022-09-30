@@ -1,0 +1,71 @@
+[
+  {
+    "Number": "34563456",
+    "UserId": 1,
+    "TypeId": 2,
+    "User": {
+      "FirstName": "Klevis",
+      "LastName": "Mema",
+      "UserTypes": null,
+      "Id": 1,
+      "IsDeleted": false,
+      "CreatedOn": "2022-09-30T11:40:18.9971761+02:00"
+    },
+    "Type": {
+      "Name": "Phone",
+      "UserTypes": null,
+      "Id": 2,
+      "IsDeleted": false,
+      "CreatedOn": "2022-09-29T19:53:24.9214632+02:00"
+    },
+    "Id": 1,
+    "IsDeleted": false,
+    "CreatedOn": "2022-09-30T11:40:19.0347991+02:00"
+  },
+  {
+    "Number": "3242345",
+    "UserId": 1,
+    "TypeId": 3,
+    "User": {
+      "FirstName": "Klevis",
+      "LastName": "Mema",
+      "UserTypes": null,
+      "Id": 1,
+      "IsDeleted": false,
+      "CreatedOn": "2022-09-30T11:40:18.9971761+02:00"
+    },
+    "Type": {
+      "Name": "Home",
+      "UserTypes": null,
+      "Id": 3,
+      "IsDeleted": false,
+      "CreatedOn": "2022-09-29T19:53:38.6142395+02:00"
+    },
+    "Id": 2,
+    "IsDeleted": false,
+    "CreatedOn": "2022-09-30T11:44:04.9779842+02:00"
+  },
+  {
+    "Number": "456456",
+    "UserId": 2,
+    "TypeId": 3,
+    "User": {
+      "FirstName": "Griselda",
+      "LastName": "Mema",
+      "UserTypes": null,
+      "Id": 2,
+      "IsDeleted": false,
+      "CreatedOn": "2022-09-30T11:45:11.4023772+02:00"
+    },
+    "Type": {
+      "Name": "Home",
+      "UserTypes": null,
+      "Id": 3,
+      "IsDeleted": false,
+      "CreatedOn": "2022-09-29T19:53:38.6142395+02:00"
+    },
+    "Id": 3,
+    "IsDeleted": false,
+    "CreatedOn": "2022-09-30T11:45:11.4096869+02:00"
+  }
+]

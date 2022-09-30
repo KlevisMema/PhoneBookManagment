@@ -1,0 +1,18 @@
+[
+  {
+    "FirstName": "Klevis",
+    "LastName": "Mema",
+    "UserTypes": null,
+    "Id": 1,
+    "IsDeleted": false,
+    "CreatedOn": "2022-09-30T11:40:18.9971761+02:00"
+  },
+  {
+    "FirstName": "Griselda",
+    "LastName": "Mema",
+    "UserTypes": null,
+    "Id": 2,
+    "IsDeleted": false,
+    "CreatedOn": "2022-09-30T11:45:11.4023772+02:00"
+  }
+]
