@@ -214,9 +214,7 @@ namespace PhoneBookManagment.BLL.RepositoryService.Implementation
             try
             {
                 // edit user 
-                var users = Deserialize_Read<User>.DesirializeRead(_User)?
-                                                  .Where(isdeleted => isdeleted.IsDeleted == false)
-                                                  .ToList();
+                var users = Deserialize_Read<User>.DesirializeRead(_User)?.ToList();                                            
 
                 if (user is null)
                     return Response<UpdateUserViewModel>.ErrorMsg("File is empty...");
@@ -290,6 +288,51 @@ namespace PhoneBookManagment.BLL.RepositoryService.Implementation
                 userTypes.Where(x => x.UserId == id).ToList().ForEach(x =>
                 {
                     x.User.IsDeleted = true;
+                });
+
+                Serialize_Write<UserType>.SerializeWriteOnFile(userTypes, _UserType);
+
+                return Response<UsersInfoViewModel>.Ok(getUser.GetUsersInfo());
+
+            }
+            catch (Exception ex)
+            {
+                return Response<UsersInfoViewModel>.ExceptionThrow(ex.Message);
+            }
+        }
+
+        // Restore deleted user
+        public Response<UsersInfoViewModel> RestoreDeletedUser(int id)
+        {
+            try
+            {
+                // restore user from users.json
+                var readUserFileJson = Deserialize_Read<User>.DesirializeRead(_User).ToList();
+
+                if (readUserFileJson is null)
+                    return Response<UsersInfoViewModel>.ErrorMsg("Empty file..");
+
+                var getUser = readUserFileJson.FirstOrDefault(x => x.Id == id);
+                if (getUser is null)
+                    return Response<UsersInfoViewModel>.ErrorMsg("User doesnt exits in removed section");
+
+                readUserFileJson.Where(x => x.Id == id).ToList().ForEach(x =>
+                {
+                    x.IsDeleted = false;
+                });
+
+                Serialize_Write<User>.SerializeWriteOnFile(readUserFileJson, _User);
+
+                // restore users from UserYTypes.json
+
+                var userTypes = Deserialize_Read<UserType>.DesirializeRead(_UserType).ToList();
+
+                var currentUser = Deserialize_Read<User>.DesirializeRead(_User)
+                                                        .FirstOrDefault(x => x.Id == id);
+
+                userTypes.Where(x => x.UserId == id).ToList().ForEach(x =>
+                {
+                    x.User.IsDeleted = false;
                 });
 
                 Serialize_Write<UserType>.SerializeWriteOnFile(userTypes, _UserType);

@@ -11,5 +11,6 @@ namespace PhoneBookManagment.BLL.RepositoryService.Interface
         Response<UsersInfoViewModel> GetUser(int id);
         Response<UpdateUserViewModel> EditUser(UpdateUserViewModel user);
         Response<UsersInfoViewModel> DeleteUser(int id);
+        Response<UsersInfoViewModel> RestoreDeletedUser(int id);
     }
 }

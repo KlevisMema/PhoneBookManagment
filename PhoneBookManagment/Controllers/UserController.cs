@@ -122,5 +122,21 @@ namespace PhoneBookManagment.WEB.Controllers
 
             return BadRequest(deleteUserRsult.Message);
         }
+
+        /// <summary>
+        ///  Restore deleted user
+        /// </summary>
+        /// <param name="id"> Id of the user u have removed</param>
+        /// <returns></returns>
+        [HttpPut("RestoreRemoveduser")]
+        public ActionResult<UsersInfoViewModel> RestoreDeletedUser(int id)
+        {
+            var getUserResult = _userService.RestoreDeletedUser(id);
+
+            if (getUserResult.Success)
+                return Ok(getUserResult.Value);
+
+            return BadRequest(getUserResult.Message);
+        }
     }
 }
